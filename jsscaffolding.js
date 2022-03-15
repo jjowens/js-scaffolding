@@ -1,5 +1,6 @@
 const templatename = process.env.npm_config_templatename;
 const projectName = process.env.npm_config_projectname;
+const databaseConnection = process.env.npm_config_databaseconnection;
 const templateDirPath = "./lib/templates/";
 let templateFilePath = "";
 const {execSync} = require('child_process')
@@ -36,10 +37,9 @@ function generateProjects(data) {
     dirName = dirName + "/";
 	
     fileContents = fileContents.replace(/##DIRNAME##/g, dirName);
+	fileContents = fileContents.replace(/##DATABASE_CONNECTION##/g, databaseConnection);
 	fileContents = fileContents.replace(/##PROJECTNAME##/g, projectName);
-	
-	//console.log(fileContents);
-	
+
 	let arrayCommands = fileContents.split("\n");
 
 	for (let i = 0; i < arrayCommands.length; i++) {
@@ -50,9 +50,6 @@ function generateProjects(data) {
 		console.log(arrayCommands[i]);
 		execSync(arrayCommands[i]);
 	}
-	
-	//execSync("dotnet new sln");
-	
 }
 
 function runCommand(cmdStr) {
