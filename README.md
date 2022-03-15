@@ -11,7 +11,7 @@ There is only one working template at the moment; "aspnet-core". It will generat
 npm run scaffold --templatename="aspnet-core" --projectname="Bookshop"
 ```
 
-You can now create an ASP.net Core project with a database engine. It will scaffold a Entity Framework database. It uses version 5.0.15
+You can now create an ASP.net Core project with a database engine. It will scaffold a Entity Framework database based on your database connection string. It uses version 5.0.15
 
 ```
 npm run scaffold --templatename="aspnet-core-db" --projectname="Bookshop" --databaseconnection="data source=localhost\SQLEXPRESS2;initial catalog=Bookshop;user id=BookshopUser;password='Password100'"
