@@ -1,12 +1,12 @@
 dotnet new sln -o "##DIRNAME####PROJECTNAME##"
 
-dotnet new mvc -o "##DIRNAME####PROJECTNAME##.Website"
+dotnet new web --framework "netcoreapp3.1" -o "##DIRNAME####PROJECTNAME##.Website"
 
-dotnet new classlib --framework "net5.0" -o "##DIRNAME####PROJECTNAME##.Models"
+dotnet new classlib --framework "netcoreapp3.1" -o "##DIRNAME####PROJECTNAME##.Models"
 
-dotnet new classlib --framework "net5.0" -o "##DIRNAME####PROJECTNAME##.Services"
+dotnet new classlib --framework "netcoreapp3.1" -o "##DIRNAME####PROJECTNAME##.Services"
 
-dotnet new classlib --framework "net5.0" -o "##DIRNAME####PROJECTNAME##.Engine"
+dotnet new classlib --framework "netcoreapp3.1" -o "##DIRNAME####PROJECTNAME##.Engine"
 
 dotnet sln "##DIRNAME####PROJECTNAME##" add ##DIRNAME####PROJECTNAME##.Models/##PROJECTNAME##.Models.csproj
 
