@@ -1,0 +1,21 @@
+dotnet new sln
+
+dotnet new mvc -o "##PROJECTNAME##.Website"
+
+dotnet new classlib --framework "net5.0" -o "##PROJECTNAME##.Models"
+
+dotnet new classlib --framework "net5.0" -o "##PROJECTNAME##.Services"
+
+dotnet new classlib --framework "net5.0" -o "##PROJECTNAME##.Engine"
+
+dotnet sln add ##PROJECTNAME##.Models/##PROJECTNAME##.Models.csproj
+
+dotnet sln add ##PROJECTNAME##.Models/##PROJECTNAME##.Services.csproj
+
+dotnet sln add ##PROJECTNAME##.Models/##PROJECTNAME##.Engine.csproj
+
+dotnet add ##PROJECTNAME##.Website/##PROJECTNAME##.Website.csproj reference ##PROJECTNAME##.Models/##PROJECTNAME##.Models.csproj
+
+dotnet add ##PROJECTNAME##.Website/##PROJECTNAME##.Website.csproj reference ##PROJECTNAME##.Services/##PROJECTNAME##.Services.csproj
+
+dotnet add ##PROJECTNAME##.Website/##PROJECTNAME##.Website.csproj reference ##PROJECTNAME##.Engine/##PROJECTNAME##.Engine.csproj

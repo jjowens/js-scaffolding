@@ -1,0 +1,23 @@
+{
+  "name": "js-scaffolding",
+  "version": "1.0.0",
+  "description": "Javascript library to create Visual Studio Studio projects using Dotnet Cli commands.",
+  "main": "jsscaffolding.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scaffold": "node.exe jsscaffolding.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjowens/js-scaffolding.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjowens/js-scaffolding/issues"
+  },
+  "homepage": "https://github.com/jjowens/js-scaffolding#readme"
+}
