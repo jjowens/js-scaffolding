@@ -1,0 +1,111 @@
+{
+    "project-name": "Golf Breaks",
+    "default-namespace": "GolfBreaks",
+    "description": "A project to book holiday breaks at golf courses across the world",
+    "solution-name": "GolfBreaks",
+    "directory-path": "GolfBreaks",
+    "dry-run": false,
+    "export-to-file": true,
+    "display-command": true,
+    "projects": [
+        {
+            "project-name": "GolfBreaksEngine",
+            "project-type": "classlib",
+            "namespace": "GolfBreaks.Engine",
+            "framework": "netcoreapp3.1",
+            "ignore": false,
+            "scaffold-order": 0,
+            "packages": [
+                {
+                    "name": "Microsoft.EntityFrameworkCore",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.Design",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.SqlServer",
+                    "version": "5.0.15"
+                }
+            ],
+            "ef-databases": [
+                {
+                    "context-name" : "dbcontext",
+                    "database-connection": "data source=WINDOWS-T2EIGLA\\SQLEXPRESS;initial catalog=Bookshop;user id=BookshopUser;password='password100'"
+                }
+            ]
+        },
+        {
+            "project-name": "GolfBreaksModels",
+            "project-type": "classlib",
+            "namespace": "GolfBreaks.Models",
+            "framework": "netcoreapp3.1",
+            "ignore": false,
+            "scaffold-order": 0,
+            "packages": [
+                {
+                    "name": "Microsoft.EntityFrameworkCore",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.Design",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.SqlServer",
+                    "version": "5.0.15"
+                }
+            ]
+        },
+        {
+            "project-name": "GolfBreaksServices",
+            "project-type": "classlib",
+            "namespace": "GolfBreaks.Services",
+            "framework": "netcoreapp3.1",
+            "ignore": false,
+            "scaffold-order": 0,
+            "packages": [
+                {
+                    "name": "Microsoft.EntityFrameworkCore",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.Design",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.SqlServer",
+                    "version": "5.0.15"
+                }
+            ],
+            "references": ["GolfBreaksEngine", "GolfBreaksModels"]
+        },
+        {
+            "project-name": "GolfBreaksWebsite",
+            "project-type": "mvc",
+            "namespace": "GolfBreaks.Website",
+            "framework": "netcoreapp3.1",
+            "ignore": false,
+            "scaffold-order": 0,
+            "packages": [
+                {
+                    "name": "Microsoft.EntityFrameworkCore",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.Design",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Microsoft.EntityFrameworkCore.SqlServer",
+                    "version": "5.0.15"
+                },
+                {
+                    "name": "Newtonsoft.Json"
+                }
+            ],
+            "references": ["GolfBreaksEngine", "GolfBreaksModels", "GolfBreaksServices"]
+        }
+    ]
+}

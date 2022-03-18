@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scaffold": "node.exe jsscaffolding.js"
+    "basecommand": "node.exe jsscaffolding.js",
+    "scaffold": "npm run basecommand --action=\"scaffold\"",
+    "scafflow": "npm run basecommand --action=\"scafflow\""
   },
   "repository": {
     "type": "git",
