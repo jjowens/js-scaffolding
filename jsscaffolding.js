@@ -1,61 +1,20 @@
-const templatename = process.env.npm_config_templatename;
-const projectName = process.env.npm_config_projectname;
-const databaseConnection = process.env.npm_config_databaseconnection;
-const templateDirPath = "./lib/templates/";
-let templateFilePath = "";
-const {execSync} = require('child_process')
+const scaffoldjs = require("./lib/scaffold");
+const scafflow = require("./lib/scafflow");
 
-templateFilePath = templateDirPath + templatename + ".txt";
+const action = process.env.npm_config_action;
 
-console.log("templateName: " + templatename);
-console.log("templateFilePath: " + templateFilePath);
-console.log("project name: " + projectName);
+console.log("Action '" + action + "'");
 
-if (projectName == undefined) {
-    projectName = "Golf";
+if (action == "scafflow") {
+	var obj = new Object();
+	obj.Workflow = process.env.npm_config_workflow;
+
+	scafflow.run(obj);
+} else {
+	var obj = new Object();
+	obj.templateName = process.env.npm_config_templatename;
+	obj.projectName = process.env.npm_config_projectname;
+	obj.databaseConnection = process.env.npm_config_databaseconnection;
+
+	scaffoldjs.run(obj);
 }
-
-const fs = require('fs');
-
-let fileContents = '';
-
-fs.readFile(templateFilePath, 'utf8', function (err,data) {
-	if (err) {
-		return console.log(err);
-	}
-	
-	generateProjects(data);
-});
-
-function generateProjects(data) {
-	fileContents = data;
-
-    let dirName = projectName;
-
-    runCommand("mkdir " + dirName);
-
-    dirName = dirName + "/";
-	
-    fileContents = fileContents.replace(/##DIRNAME##/g, dirName);
-	fileContents = fileContents.replace(/##DATABASE_CONNECTION##/g, databaseConnection);
-	fileContents = fileContents.replace(/##PROJECTNAME##/g, projectName);
-
-	let arrayCommands = fileContents.split("\n");
-
-	for (let i = 0; i < arrayCommands.length; i++) {
-		if (arrayCommands[i].length <= 1) {
-			continue;
-		}
-		
-		console.log(arrayCommands[i]);
-		execSync(arrayCommands[i]);
-	}
-}
-
-function runCommand(cmdStr) {
-    execSync(cmdStr);
-}
-
-
-
-
