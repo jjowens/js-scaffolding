@@ -1,7 +1,7 @@
 # js-scaffolding
 Javascript library to create Visual Studio Studio projects using Dotnet Cli commands.
 
-This javascript library is a Work In Prpogress (WIP). Do not use for production! Have fun playing around with it.
+This javascript library is a Work In Progress (WIP). Do not use for production! Have fun playing around with it.
 
 ## Basic commands
 
