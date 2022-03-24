@@ -4,7 +4,7 @@
     "description": "A project to test tailwinds CSS",
     "solution-name": "SimpleTailwinds",
     "directory-path": "SimpleTailwinds",
-    "dry-run": false,
+    "dry-run": true,
     "export-to-file": true,
     "display-command": true,
     "projects": [
