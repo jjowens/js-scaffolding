@@ -1,5 +1,5 @@
 {
-    "project-name": "SimpleTailwinds",
+    "project-name": "Simple actions",
     "default-namespace": "SimpleTailwinds",
     "description": "A project to test tailwinds CSS",
     "solution-name": "SimpleTailwinds",
@@ -7,22 +7,6 @@
     "dry-run": false,
     "export-to-file": true,
     "display-command": true,
-    "do-not-create-solution": true,
-    "projects": [
-        {
-            "project-name": "SimpleTailwinds",
-            "project-type": "mvc",
-            "namespace": "SimpleTailwinds.Website",
-            "framework": "netcoreapp3.1",
-            "ignore": true,
-            "scaffold-order": 0,
-            "packages": [
-                {
-                    "name": "Newtonsoft.Json"
-                }
-            ]
-        }
-    ],
     "actions": [
         {
             "action-name": "TailwindCSSAdd",
@@ -32,7 +16,11 @@
             "commands": [
                 {
                     
-                    "command": "cd ./SimpleTailwinds/ && npm i tailwindcss"
+                    "command": "cd SimpleTailwinds"
+                },
+                {
+                    
+                    "command": "npm i tailwindcss"
                 }
             ]
         }
