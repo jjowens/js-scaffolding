@@ -1,0 +1,28 @@
+{
+    "project-name": "Simple actions",
+    "default-namespace": "SimpleTailwinds",
+    "description": "A project to test tailwinds CSS",
+    "solution-name": "SimpleTailwinds",
+    "directory-path": "SimpleTailwinds",
+    "dry-run": false,
+    "export-to-file": true,
+    "display-command": true,
+    "actions": [
+        {
+            "action-name": "TailwindCSSAdd",
+            "description": "Add tailwinds to solution",
+            "action-type": "npm",
+            "ignore": false,
+            "commands": [
+                {
+                    
+                    "command": "cd SimpleTailwinds"
+                },
+                {
+                    
+                    "command": "npm i tailwindcss"
+                }
+            ]
+        }
+    ]
+}

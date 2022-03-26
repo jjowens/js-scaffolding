@@ -4,7 +4,7 @@
     "description": "A project to book holiday breaks at golf courses across the world",
     "solution-name": "GolfBreaks",
     "directory-path": "GolfBreaks",
-    "dry-run": false,
+    "dry-run": true,
     "export-to-file": true,
     "display-command": true,
     "projects": [
@@ -110,24 +110,18 @@
     ],
     "actions": [
         {
-            "action-name": "TailwindCSSAdd",
-            "description": "Add tailwinds to solution",
+            "action-name": "AddNPMPackages",
+            "description": "Create init file. Add tailwinds and sockets io to project",
             "action-type": "npm",
             "ignore": false,
             "commands": [
                 {
-                    "command": "npm i tailwindcss"
-                }
-            ]
-        },
-        {
-            "action-name": "Socket.IO",
-            "description": "Add tailwinds to solution",
-            "action-type": "npm",
-            "ignore": false,
-            "commands": [
+                    
+                    "command": "cd ./GolfBreaks/ && npm init -y"
+                },
                 {
-                    "command": "npm i tailwindcss"
+                    
+                    "command": "cd ./GolfBreaks/ && npm i tailwindcss"
                 }
             ]
         }

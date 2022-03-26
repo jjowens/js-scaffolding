@@ -4,6 +4,7 @@
   "description": "Javascript library to create Visual Studio Studio projects using Dotnet Cli commands.",
   "main": "jsscaffolding.js",
   "directories": {
+    "example": "examples",
     "lib": "lib"
   },
   "scripts": {
@@ -21,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/jjowens/js-scaffolding/issues"
   },
-  "homepage": "https://github.com/jjowens/js-scaffolding#readme"
+  "homepage": "https://github.com/jjowens/js-scaffolding#readme",
+  "keywords": []
 }
