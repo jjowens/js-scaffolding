@@ -7,6 +7,7 @@
     "dry-run": false,
     "export-to-file": true,
     "display-command": true,
+    "force-overwrite": false,
     "do-not-create-solution": true,
     "projects": [
         {
@@ -14,8 +15,9 @@
             "project-type": "mvc",
             "namespace": "SimpleTailwinds.Website",
             "framework": "netcoreapp3.1",
-            "ignore": true,
+            "ignore": false,
             "scaffold-order": 0,
+            "force-overwrite": true,
             "packages": [
                 {
                     "name": "Newtonsoft.Json"
@@ -32,7 +34,12 @@
             "commands": [
                 {
                     
-                    "command": "cd ./SimpleTailwinds/ && npm i tailwindcss"
+                    "command": "cd ./SimpleTailwinds/ && npm init -y"
+                },
+                {
+                    
+                    "command": "npm --prefix ./SimpleTailwinds/ i tailwindcss",
+                    "ignore": true
                 }
             ]
         }
